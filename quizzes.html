@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quizzes</title>
+  <link rel="stylesheet" href="quizzes.css" />
+</head>
+<body>
+  <nav>
+    <a href="hero.html">Home</a>
+    <a href="#">Dashboard</a>
+    <a href="learn.html">Learn</a>
+    <a href="#">Practice</a>
+    <a href="quizzes.html">Quizzes</a>
+    <a href="#">Community</a>
+    <a href="#">Profile</a>
+  </nav>
+
+  <div class="bubbles">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="container">
+    <h1>Quizzes</h1>
+    <label for="ageFilter">Choose age range:</label>
+    <select id="ageFilter">
+      <option value="all">All Ages</option>
+      <option value="13-15">13-15</option>
+      <option value="16-18">16-18</option>
+      <option value="19+">19+</option>
+    </select>
+
+    <div class="quiz-grid" id="quizGrid"></div>
+  </div>
+
+  <script src="quizzes.js"></script>
+</body>
+</html>

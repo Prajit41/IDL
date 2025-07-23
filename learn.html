@@ -2,79 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Learn Quiz</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #c9d6ff, #e2e2e2);
-      padding: 30px;
-    }
-    .quiz-container {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      margin-bottom: 20px;
-      color: #333;
-    }
-    .back-btn {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 8px 12px;
-      background-color: #6c63ff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-    pre {
-      white-space: pre-wrap;
-      font-family: inherit;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debate Quiz</title>
+  <link rel="stylesheet" href="learn.css" />
 </head>
 <body>
+    <nav>
+    <a href="hero.html">Home</a>
+    <a href="#">Dashboard</a>
+    <a href="learn.html">Learn</a>
+    <a href="#">Practice</a>
+    <a href="quizzes.html">Quizzes</a>
+    <a href="#">Community</a>
+    <a href="#">Profile</a>
+  </nav>
+
   <div class="quiz-container">
-    <a href="quiz.html" class="back-btn">← Back to Quizzes</a>
-    <h2>Loading quiz...</h2>
-    <pre id="quizContent"></pre>
+    <h1>Debate Fundamentals Quiz</h1>
+    <div id="quiz">
+      <p id="question">Loading question...</p>
+      <div class="options" id="options"></div>
+      <button id="next-btn">Next</button>
+    </div>
+    <p id="score" class="hide">Your score: <span id="score-value"></span></p>
   </div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const topic = params.get("topic");
-    const age = params.get("age");
-
-    async function fetchQuiz() {
-      if (!topic || !age) {
-        document.getElementById("quizContent").textContent = "Missing topic or age in URL.";
-        return;
-      }
-
-      try {
-        const res = await fetch("/generate-quiz", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ topic, age }),
-        });
-
-        const data = await res.json();
-        document.querySelector("h2").textContent = topic;
-        document.getElementById("quizContent").textContent = data.quiz;
-      } catch (err) {
-        document.getElementById("quizContent").textContent = "Failed to load quiz.";
-        console.error("Error:", err);
-      }
-    }
-
-    fetchQuiz();
-  </script>
+  <script src="learn.js"></script>
 </body>
 </html>
