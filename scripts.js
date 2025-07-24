@@ -9,6 +9,6 @@ enterBtn?.addEventListener('click', () => {
   } else if (!logged) {
     location.href = 'login.html';
   } else {
-    location.href = 'index.html#dashboard';
+    location.href = 'indexx.html#dashboard';
   }
 });
