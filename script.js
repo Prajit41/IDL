@@ -13,11 +13,11 @@ function login() {
 
 function checkLogin() {
   if (localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "index.html";
+    window.location.href = "indexx.html";
   }
 }
 
 function logout() {
   localStorage.removeItem("isLoggedIn");
-  window.location.href = "index.html";
+  window.location.href = "indexx.html";
 }
